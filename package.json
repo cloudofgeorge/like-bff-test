@@ -1,0 +1,50 @@
+{
+  "name": "like-bff-test",
+  "version": "0.0.1",
+  "description": "test-app",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:update": "jest -u",
+    "lint": "npm run lint:eslint",
+    "lint:fix": "npm run lint:eslint -- --fix",
+    "lint:eslint": "eslint ./src --ext .js,.json",
+    "lint:eslint:report": "eslint ./src --ext .ts,.tsx --output-file reports/eslint-report.json --format json"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && git add",
+      "pre-push": "lint-staged && npm run test"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "npm run lint"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cloudofgeorge/like-bff-test.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "cloudofgeorge",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cloudofgeorge/like-bff-test/issues"
+  },
+  "homepage": "https://github.com/cloudofgeorge/like-bff-test#readme",
+  "devDependencies": {
+    "eslint": "^7.30.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^7.0.1",
+    "jest": "^27.0.6",
+    "prettier": "^2.3.2"
+  }
+}

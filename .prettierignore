@@ -1,0 +1,7 @@
+.helm
+dist
+build
+public
+reports
+coverage
+node_modules

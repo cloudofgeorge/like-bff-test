@@ -1,0 +1,22 @@
+module.exports = {
+  coverageDirectory: '<rootDir>/coverage',
+  rootDir: './',
+  verbose: true,
+  testEnvironmentOptions: { resources: 'usable', runScripts: 'dangerously' },
+  collectCoverageFrom: [
+    'src/**/*.{ts,tsx,js,jsx}',
+    '!src/test/**/*',
+    '!src/**/index.js',
+    '!src/**/__mocks__/**/*',
+    '!src/**/__test__/**/*',
+    '!**/node_modules/**',
+  ],
+  moduleFileExtensions: ['js', 'json', 'node'],
+  testRegex: '(/__test__/.*|(\\.|/)(test|spec))\\.js?$',
+  moduleDirectories: ['node_modules', 'src'],
+  transformIgnorePatterns: [],
+  setupFilesAfterEnv: ['<rootDir>/src/test/setup-tests.js'],
+  restoreMocks: true,
+  clearMocks: true,
+  resetMocks: true,
+};
